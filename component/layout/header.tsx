@@ -8,7 +8,7 @@ import { LockOutlined } from '@ant-design/icons';
 const Header = () => {
     const user = useSelector<RootState, any>(state => state.user);
     return (
-        <div className="h-[60px] fixed w-full shadow-lg flex justify-between">
+        <div className=" shadow-lg flex justify-between items-center">
             <Image src={'/images/hono-title.png'} width={100} height={23} alt="Hono Logo" />
             <div className="flex items-center gap-2">
                 <Image src={'/images/user-avatar.png'} width={25} height={25} alt="user" />

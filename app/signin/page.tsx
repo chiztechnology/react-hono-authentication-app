@@ -2,7 +2,7 @@
 import Image from "next/image"
 import type { FormProps } from 'antd';
 import { Button, Form, Input, notification } from 'antd';
-import { InfoCircleOutlined, UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useState } from "react";
 
 type FieldType = {

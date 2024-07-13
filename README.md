@@ -122,7 +122,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 🚀Live Demo <a name="livedemo"></a>
 
-Watch this short video presentation of [by clicking on this link](https://drive.google.com/file/d/1mGJC9CGKaB3oEqFHVQUVKbYG9SHH66N7/view?usp=sharing)
+- Click [here to test the live version deployed on render](https://react-hono-authentication-app.onrender.com)
+
+- Watch this short video presentation of [by clicking on this link](https://drive.google.com/file/d/1mGJC9CGKaB3oEqFHVQUVKbYG9SHH66N7/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

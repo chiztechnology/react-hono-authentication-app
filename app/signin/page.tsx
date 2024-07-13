@@ -5,7 +5,6 @@ import { Button, Form, Input, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 import { setUser } from "@/context/userSlice";
 import { useRouter } from "next/navigation";
 

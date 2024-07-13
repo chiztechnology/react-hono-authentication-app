@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src='./public/images/hono-title.png' width =350 height=185 alt='App Logo'/>
+    <img src='./public/images/hono-title.png' width =380 height=185 alt='App Logo'/>
   <h1><b>React Hono Authentication App</b></h1>
 </div>
 
@@ -49,8 +49,6 @@ This project was implemented using:
     <li><a href="https://hono.dev/">Hono</a></li>
   </ul>
 </details>
-
-<details>
 
 ### Key Features <a name="key-features"></a>
 

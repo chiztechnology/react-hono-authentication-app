@@ -4,6 +4,10 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setUser } from "@/context/userSlice";
+import { useRouter } from "next/navigation";
 
 type FieldType = {
     username?: string;
@@ -11,13 +15,33 @@ type FieldType = {
 };
 
 const SignInPage = (props: any) => {
-
+    const dispatch = useDispatch();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
-    const handleSignIn: FormProps<FieldType>['onFinish'] = (values) => {
-        console.log('Success:', values);
-        // notification.error({ message : `An Error has occured : ${errorInfo}`})
+    const handleSignIn: FormProps<FieldType>['onFinish'] = async (values: any) => {
+
+
+        if (values.password.length > 4) {
+            setTimeout(() => {
+                setLoading(true);
+                // pass user details to reducer
+                dispatch(setUser({
+                    userId: 1,
+                    fullName: values.username,
+                    username: values.username
+                }));
+                router.push('/profile');
+
+            }, 2000)
+
+        } else {
+            notification.warning({ message: `Your password is too short` })
+        }
+
+        setLoading(false);
+
     };
     return (
         <div className="w-full flex h-[100vh] items-center justify-center bg-white">
@@ -36,9 +60,9 @@ const SignInPage = (props: any) => {
                         label="Username"
                         name="username"
                         rules={[{ required: true, message: 'Please type your username!' }]}
-                        
+
                     >
-                        <Input prefix={<UserOutlined/>} placeholder="Username" />
+                        <Input prefix={<UserOutlined />} placeholder="Username" />
                     </Form.Item>
 
                     <Form.Item<FieldType>
@@ -46,11 +70,11 @@ const SignInPage = (props: any) => {
                         name="password"
                         rules={[{ required: true, message: 'Please type your password!' }]}
                     >
-                        <Input.Password prefix={<LockOutlined/>} placeholder="******"/>
+                        <Input.Password prefix={<LockOutlined />} placeholder="******" />
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button type="primary" htmlType="submit">
+                        <Button loading={loading} type="primary" htmlType="submit">
                             Sign In
                         </Button>
                     </Form.Item>

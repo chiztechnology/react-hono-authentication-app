@@ -1,14 +1,21 @@
 'use client'
 import { RootState } from "@/context/store";
-import { Button } from "antd";
+import { Button, notification } from "antd";
 import Image from "next/image"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LockOutlined } from '@ant-design/icons';
+import { clearUser, setUser } from "@/context/userSlice";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
     const user = useSelector<RootState, any>(state => state.user);
+    const router = useRouter();
+    const dispatch = useDispatch();
 
     const handleLogout=()=>{
+        dispatch(clearUser(user));
+        notification.success({ message : 'Thanks for using our app!'});
+        router.push('/signin')
 
     }
     return (

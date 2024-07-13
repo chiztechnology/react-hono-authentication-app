@@ -21,7 +21,7 @@ const userSlice = createSlice({
       state.username = action.payload.username;
       state.fullName = action.payload.fullName;
     },
-    clearUser: (state) => {
+    clearUser: (state : UserState) => {
       state.userId = 0;
       state.username = '';
       state.fullName = '';

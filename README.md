@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src='./public/images/hono-title.png' width =230 height=185 alt='App Logo'/>
+    <img src='./public/images/hono-title.png' width =300 height=185 alt='App Logo'/>
   <h1><b>React Hono Authentication App</b></h1>
 </div>
 

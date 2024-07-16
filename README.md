@@ -39,7 +39,8 @@ This project was implemented using:
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://react.dev/">React.js</a></li>
+    <li><a href="https://vitejs.dev/">Vite</a></li>
   </ul>
 </details>
 

@@ -1,0 +1,20 @@
+.header-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    z-index: 10;
+}
+
+.logout-container {
+    /* flex items-center gap-2 */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-username-display {
+    font-weight: normal;
+}

@@ -1,0 +1,24 @@
+.profile-sub-container {
+    padding : 16px;
+    /* background-color: white;
+    z-index: 1; */
+}
+
+.profile-sub-header-container {
+    padding: 6px;
+}
+
+.profile-name-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-content-container p {
+    text-wrap: wrap;
+    margin : 5px;
+}
+
+.text-highlight {
+    color: black;
+}

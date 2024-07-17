@@ -7,6 +7,7 @@ import { useNavigate, useNavigation } from 'react-router-dom';
 import { setUser } from '../../context/userSlice';
 import logo_app from '../../assets/logic-logo.png'
 import './signin.css'
+import { signIn_Auth } from '../../context/api';
 
 type FieldType = {
     username?: string;
@@ -21,26 +22,19 @@ const SignInPage = (props: any) => {
 
     const handleSignIn: FormProps<FieldType>['onFinish'] = async (values: any) => {
 
-
-        if (values.password.length > 4) {
-            setTimeout(() => {
-                setLoading(true);
-                // pass user details to reducer
-                dispatch(setUser({
-                    userId: 1,
-                    fullName: values.username,
-                    username: values.username
-                }));
+        setLoading(true);
+        await signIn_Auth(values)
+            .then(response => {
+                notification.success({ message: `Authentication successfull` });
+                localStorage.setItem('access_token', response.data.access_token);
                 navigate('/profile');
-
-            }, 2000)
-
-        } else {
-            notification.warning({ message: `Your password is too short` })
-        }
-
-        setLoading(false);
-
+            })
+            .catch((err) => {
+                console.log(err.response.statusText);
+                notification.error({ message: `An Error occured : ${err.response.statusText}` });
+                setLoading(false);
+            });
+        setLoading(false)
     };
     return (
         <div className="signin-container">

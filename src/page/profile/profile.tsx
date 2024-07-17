@@ -1,15 +1,22 @@
-import { Skeleton, Tag } from "antd";
+import { notification, Skeleton, Tag } from "antd";
 import { useEffect, useState } from "react"
 import './profile.css'
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = (props: any) => {
     const [loading, setLoading] = useState(true);
     const [profileDetails, setProfileDetails] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000)
+       const access_token = localStorage.getItem('access_token');
+       if(access_token){
+
+       }else{
+        localStorage.removeItem('access_token');
+        notification.error({ message : 'You have been signed out !'});
+        navigate('/signin');
+       }
     }, [])
 
     return (

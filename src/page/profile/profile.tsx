@@ -25,8 +25,14 @@ const ProfilePage = () => {
     }, [])
 
     const decodeJWT = (token: string) => {
-        const decoded = jwtDecode(`${token}`);
-        return decoded;
+        try {
+            const decoded = jwtDecode(`${token}`);
+            return decoded;
+        } catch (error) {
+            notification.error({ message : 'Invalid Token Error'});
+            localStorage.removeItem('access_token');
+            navigate('/signin')
+        }
     }
 
     return (

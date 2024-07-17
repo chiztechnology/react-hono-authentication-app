@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/layout/header'
 import { Provider } from 'react-redux'
 import store from './context/store'
 import ProfilePage from './page/profile/profile'
 import SignInPage from './page/signin/signin'
+import './App.css'
 
 function App() {
   const access_token = localStorage.getItem('access_token');

@@ -1,14 +1,14 @@
 import { notification, Skeleton, Tag } from "antd";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import './profile.css'
 import { jwtDecode } from "jwt-decode";
 import { useSelector } from "react-redux";
 import { RootState } from "../../context/store";
+import './profile.css'
 
 const ProfilePage = () => {
     const [loading, setLoading] = useState(true);
-    const [profileDetails, setProfileDetails] = useState({});
+    const [profileDetails, setProfileDetails] = useState<any>({});
     const navigate = useNavigate();
     const user = useSelector<RootState, any>(state => state.user);
 

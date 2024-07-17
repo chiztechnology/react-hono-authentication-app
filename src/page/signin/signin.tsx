@@ -3,18 +3,18 @@ import { Button, Form, Image, Input, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../context/userSlice';
 import logo_app from '../../assets/logic-logo.png'
-import './signin.css'
 import { signIn_Auth } from '../../context/apiContext';
+import './signin.css'
 
 type FieldType = {
     username?: string;
     password?: string;
 };
 
-const SignInPage = (props: any) => {
+const SignInPage = () => {
     const dispatch = useDispatch();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);

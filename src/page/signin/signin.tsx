@@ -7,7 +7,7 @@ import { useNavigate, useNavigation } from 'react-router-dom';
 import { setUser } from '../../context/userSlice';
 import logo_app from '../../assets/logic-logo.png'
 import './signin.css'
-import { signIn_Auth } from '../../context/api';
+import { signIn_Auth } from '../../context/apiContext';
 
 type FieldType = {
     username?: string;
@@ -27,6 +27,9 @@ const SignInPage = (props: any) => {
             .then(response => {
                 notification.success({ message: `Authentication successfull` });
                 localStorage.setItem('access_token', response.data.access_token);
+                dispatch(setUser({
+                    username : values.username
+                }))
                 navigate('/profile');
             })
             .catch((err) => {

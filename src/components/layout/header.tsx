@@ -1,7 +1,7 @@
 import { Button, Image, notification } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { LockOutlined } from '@ant-design/icons';
-import { clearUser, setUser } from "../../context/userSlice";
+import { clearUser } from "../../context/userSlice";
 import { RootState } from "../../context/store";
 import './header.css'
 import { Link, useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ const Header = () => {
             </Link>
             <div className="logout-container">
                 <Image preview={false} src={user_avatar} width={25} height={25} alt="user" />
-                    <h4 className="header-username-display">{user?.fullName}</h4>
+                    <h4 className="header-username-display">{user?.username}</h4>
                 <Button danger className="ml-2" onClick={handleLogout}><LockOutlined color="white"/>Logout</Button>
             </div>
 
